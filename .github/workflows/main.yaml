@@ -1,0 +1,34 @@
+name: GGJ-Duality-CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: "Building Project"
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout Code
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Cache Library directory
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: "Library"
+          key: "Library-${{ hashfiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}"
+          restore-keys: |
+            Library-
+      # Build
+      - name: Build Project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+          unityVersion: 2020.3.26f1
+      # Store artifacts
+      - name: Store Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
