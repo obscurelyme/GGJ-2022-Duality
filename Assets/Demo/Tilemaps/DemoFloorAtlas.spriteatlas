@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DemoFloorAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 3021293948177933728, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -521421521943678553, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 4156613219374065525, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 6701577270426654861, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -2605811263909999156, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -1914212497919887530, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -7904497843921011719, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 419465797974010847, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 3289583066052281183, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 4743045319992478482, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 269958617446453245, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -858957883431734884, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -7087139809514406331, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -147310606192620550, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 1144227841678122376, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -8531643041465972866, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 8338806984099795155, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 3128376557732643668, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -4186351315300104185, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 6344795936303906686, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: 7160311269479878796, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  - {fileID: -2222669452853940929, guid: 97fada5ee61f9ae468308bf5d6924cc2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Magic Rock_20
+  - Magic Rock_21
+  - Magic Rock_8
+  - Magic Rock_9
+  - Magic Rock_6
+  - Magic Rock_7
+  - Magic Rock_4
+  - Magic Rock_5
+  - Magic Rock_2
+  - Magic Rock_3
+  - Magic Rock_0
+  - Magic Rock_1
+  - Magic Rock_19
+  - Magic Rock_18
+  - Magic Rock_15
+  - Magic Rock_14
+  - Magic Rock_17
+  - Magic Rock_16
+  - Magic Rock_11
+  - Magic Rock_10
+  - Magic Rock_13
+  - Magic Rock_12
+  m_RenderDataMap: {}
+  m_Tag: DemoFloorAtlas
+  m_IsVariant: 0
