@@ -22,18 +22,18 @@ public class GameStateManager : MonoBehaviour
   void Update()
   {
     //Demo Code
-    if (Input.GetKeyDown(KeyCode.F))
-    {
-      OnDeath();
-    }
-    if (Input.GetKeyDown(KeyCode.W))
-    {
-      OnWin();
-    }
-    if (Input.GetKeyDown(KeyCode.P))
-    {
-      OnTogglePause();
-    }
+    // if (Input.GetKeyDown(KeyCode.F))
+    // {
+    //   OnDeath();
+    // }
+    // if (Input.GetKeyDown(KeyCode.W))
+    // {
+    //   OnWin();
+    // }
+    // if (Input.GetKeyDown(KeyCode.P))
+    // {
+    //   OnTogglePause();
+    // }
   }
 
   void StopTime()
