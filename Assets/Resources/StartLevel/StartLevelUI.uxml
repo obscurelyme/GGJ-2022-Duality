@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+  <ui:VisualElement>
+    <ui:Box name="scroll-container" class="panel container small hide-overflow scroll-in-animation">
+      <ui:TextElement class="scroll-text" text="You have been separated from your cat!" />
+      <ui:TextElement class="scroll-text" text="Jump onto the platforms to reunite with each other :)" />
+    </ui:Box>
+  </ui:VisualElement>
+</ui:UXML>

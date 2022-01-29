@@ -61,6 +61,10 @@ Button TextElement {
   width: 100%;
 }
 
+.hide-overflow {
+  overflow: hidden;
+}
+
 .panel {
   background-color: rgba(44, 18, 105, 0.507);
   padding: 8px;
