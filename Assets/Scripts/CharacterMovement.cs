@@ -65,19 +65,23 @@ public class CharacterMovement : MonoBehaviour
 
   void CheckHorizontalMovement()
   {
-    // Moving horizontally
-    float horizontalVelocity = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
-    horizontalVelocity = isMirrored ? -horizontalVelocity : horizontalVelocity;
-    if (Mathf.Abs(horizontalVelocity) > maxSpeed)
-    {
-      horizontalVelocity = maxSpeed * Mathf.Sign(horizontalVelocity);
-    }
-    rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
-
     // Flip the sprite in the direction we're facing. This should happen after all the velocity calcualtions
     if (Input.GetButton("Horizontal"))
     {
-      sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
+      // Moving horizontally
+      float horizontalVelocity = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
+      horizontalVelocity = isMirrored ? -horizontalVelocity : horizontalVelocity;
+      if (Mathf.Abs(horizontalVelocity) > maxSpeed)
+      {
+        horizontalVelocity = maxSpeed * Mathf.Sign(horizontalVelocity);
+      }
+      rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
+
+      // Flip the sprite in the direction we're facing. This should happen after all the velocity calcualtions
+      if (Input.GetButton("Horizontal"))
+      {
+        sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
+      }
     }
   }
 
