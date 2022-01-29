@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <ui:VisualElement>
+    <ui:Box class="centered-container">
+      <ui:Box class="container small">
+        <ui:Box class="panel centered">
+          <ui:TextElement class="text-title" text="Paused" />
+
+          <ui:Box class="full-width-container controls-subpanel">
+            <ui:TextElement class="text-title-secondary text-centered" text="Controls" />
+            <ui:Box>
+              <ui:Box class="controls-list-item">
+                <ui:TextElement text="Move Left" />
+                <ui:TextElement text="A | Left Arrow" />
+              </ui:Box>
+              <ui:Box class="controls-list-item">
+                <ui:TextElement text="Move Right" />
+                <ui:TextElement text="D | Right Arrow" />
+              </ui:Box>
+              <ui:Box class="controls-list-item">
+                <ui:TextElement text="Jump" />
+                <ui:TextElement text="Space Bar" />
+              </ui:Box>
+            </ui:Box>
+          </ui:Box>
+
+          <ui:Box class="vertical-container"> 
+            <ui:Button name="button-resume">
+              <ui:TextElement text="Resume" />
+            </ui:Button>
+          </ui:Box>
+        </ui:Box>
+      </ui:Box>
+    </ui:Box>
+  </ui:VisualElement>
+
+</ui:UXML>

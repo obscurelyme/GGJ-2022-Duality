@@ -1,0 +1,17 @@
+:root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.35);
+}
+
+.controls-subpanel {
+  margin-bottom: 36px;
+}
+
+.controls-list-item {
+  flex-direction: row;
+  justify-content: space-around;
+}
