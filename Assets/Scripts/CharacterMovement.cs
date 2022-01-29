@@ -67,7 +67,6 @@ public class CharacterMovement : MonoBehaviour
   {
     // Moving horizontally
     float horizontalVelocity = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
-    Debug.Log(Time.deltaTime);
     horizontalVelocity = isMirrored ? -horizontalVelocity : horizontalVelocity;
     if (Mathf.Abs(horizontalVelocity) > maxSpeed)
     {
