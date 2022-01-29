@@ -7,8 +7,12 @@ public class CharacterMovement : MonoBehaviour
   [Header("Horizontal Movement")]
   [SerializeField] private float movementSpeed;
   [SerializeField] private float maxSpeed;
+  [Tooltip("Controlls how long it takes for the player to come to a stop")]
+  [Range(0.0f, 1.0f)]
+  [SerializeField] private float dragLerp;
   [Tooltip("Whether or not the character moves in the opposite horizontal direction inputted by the player")]
   [SerializeField] private bool isMirrored;
+
 
   [Header("Verticle Movement")]
   [SerializeField] private float jumpForce;
@@ -78,10 +82,12 @@ public class CharacterMovement : MonoBehaviour
       rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
 
       // Flip the sprite in the direction we're facing. This should happen after all the velocity calcualtions
-      if (Input.GetButton("Horizontal"))
-      {
-        sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
-      }
+      sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
+    }
+    else
+    {
+      // Apply drag
+      rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, dragLerp), rb.velocity.y);
     }
   }
 
