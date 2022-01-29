@@ -1,0 +1,14 @@
+Label {
+  font-size: 20px;
+  -unity-font-style: bold;
+  color: rgb(68, 138, 255);
+}
+
+#scroll-container {
+  height: 150px;
+}
+
+.scroll-in-animation {
+  padding: 0px;
+  width: 0px;
+}
