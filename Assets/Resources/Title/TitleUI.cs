@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class TitleUI : MonoBehaviour
 {
   UIDocument document;
   VisualElement root;
   [SerializeField] StyleSheet styles;
+  [SerializeField] string playSceneName = "";
+
+  Button playButton;
 
   void Awake()
   {
     document = GetComponent<UIDocument>();
     root = document.rootVisualElement;
+    playButton = root.Query<Button>(name: "button-play");
   }
 
   void OnEnable()
@@ -19,10 +24,20 @@ public class TitleUI : MonoBehaviour
     {
       root.styleSheets.Add(styles);
     }
+
+    playButton.RegisterCallback<ClickEvent>(HandlePlayButtonClick);
   }
 
-  void Start()
+  void OnDisable()
   {
+    playButton.UnregisterCallback<ClickEvent>(HandlePlayButtonClick);
+  }
 
+  void HandlePlayButtonClick(ClickEvent evt)
+  {
+    if (playSceneName != "")
+    {
+      SceneManager.LoadScene(playSceneName);
+    }
   }
 }

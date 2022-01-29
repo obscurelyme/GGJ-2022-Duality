@@ -13,12 +13,6 @@
           <ui:Button name="button-play" class="button">
             <ui:TextElement text="Play" />
           </ui:Button>
-          <ui:Button name="button-play" class="button">
-            <ui:TextElement text="Play" />
-          </ui:Button>
-          <ui:Button name="button-play" class="button">
-            <ui:TextElement text="Play" />
-          </ui:Button>
         </ui:Box>
       </ui:Box>
     </ui:Box>
