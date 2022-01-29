@@ -38,20 +38,23 @@ public class CharacterMovement : MonoBehaviour
         // Moving horizontally
         float horizontalVelocity = Input.GetAxis("Horizontal") * movementSpeed;
         horizontalVelocity = isMirrored ? -horizontalVelocity : horizontalVelocity;
-        if (Mathf.Abs(horizontalVelocity) > maxSpeed) {
+        if (Mathf.Abs(horizontalVelocity) > maxSpeed)
+        {
             horizontalVelocity = maxSpeed * Mathf.Sign(horizontalVelocity);
         }
         rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
 
         // Flip the sprite in the direction we're facing. This should happen after all the velocity calcualtions
-        if (Input.GetButton("Horizontal")) {
+        if (Input.GetButton("Horizontal"))
+        {
             sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
         }
     }
 
     void CheckForJump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded()) {
+        if (Input.GetButtonDown("Jump") && isGrounded())
+        {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
@@ -59,7 +62,8 @@ public class CharacterMovement : MonoBehaviour
     /*
         Source: https://www.youtube.com/watch?v=ptvK4Fp5vRY
     */
-    private bool isGrounded() {
+    private bool isGrounded()
+    {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
         return hit.collider != null;
     }
