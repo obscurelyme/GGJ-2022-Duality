@@ -9,16 +9,9 @@ public class MovingPlatform : Platform
 
 
     [SerializeField] private float currentLoopTime = 0.0f;
-    [SerializeField] private Vector3 leftMost;
-    [SerializeField] private Vector3 rightMost;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentPosition = this.GetComponent<Transform>().position;
-        leftMost = currentPosition - new Vector3(maxDisplacementX, 0, 0);
-        rightMost = currentPosition + new Vector3(maxDisplacementX, 0, 0);
-    }
+    public Transform Platform;
+    public Transform leftMost;
+    public Transform rightMost;
 
     // Update is called once per frame
     void Update()
@@ -30,9 +23,9 @@ public class MovingPlatform : Platform
 
     void MovementLoop(float dt)
     {
-        float halfLoopTime = loopTime/2.0f;
+        float halfLoopTime = loopTime / 2.0f;
         currentLoopTime = (currentLoopTime + dt) % loopTime;
-        this.GetComponent<Transform>().position = Vector3.Lerp(leftMost, rightMost, Mathf.Abs(currentLoopTime - halfLoopTime) / halfLoopTime);
+        Platform.position = Vector3.Lerp(leftMost.position, rightMost.position, Mathf.Abs(currentLoopTime - halfLoopTime) / halfLoopTime);
     }
 
 }
