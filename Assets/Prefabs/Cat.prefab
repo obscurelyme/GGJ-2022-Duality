@@ -144,8 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd43f8ee4ef7e9449ff01c9eb821e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
-  maxSpeed: 25
+  movementSpeed: 3000
+  maxSpeed: 5000
+  dragLerp: 0.05
   isMirrored: 0
   jumpForce: 15
   jumpableGround:
