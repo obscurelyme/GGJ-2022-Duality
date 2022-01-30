@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class WarningBarrierController : Barrier
 {
-  void OnTriggerStay2D(Collider2D other)
+  void OnTriggerEnter2D(Collider2D other)
   {
     if ("Player".Equals(other.tag))
     {
-      GameStateManager.InvokeOnWarningBarrierStay(other);
+      GameStateManager.InvokeOnWarningBarrierEnter(CharacterTypeHelper.GetTypeFromName(other.name));
+    }
+  }
+
+  void OnTriggerExit2D(Collider2D other)
+  {
+    if ("Player".Equals(other.tag))
+    {
+      GameStateManager.InvokeOnWarningBarrierExit(CharacterTypeHelper.GetTypeFromName(other.name));
     }
   }
 }

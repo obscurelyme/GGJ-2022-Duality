@@ -320,7 +320,7 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
-  m_GroupFramingMode: 2
+  m_GroupFramingMode: 0
   m_AdjustmentMode: 0
   m_GroupFramingSize: 0.8
   m_MaxDollyIn: 5000
