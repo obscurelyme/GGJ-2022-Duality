@@ -1,0 +1,33 @@
+:root {
+  height: 100%;
+  width: 100%;
+}
+
+#notification-area {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.notification {
+  position: relative;
+  -unity-text-align: middle-center;
+  width: 270px;
+  height: 125px;
+  top: -100px;
+  overflow: hidden;
+}
+
+.text__hidden {
+  display: none;
+}
+
+#notification-area.left-side {
+  justify-content: flex-start;
+}
+
+#notification-area.right-side {
+  justify-content: flex-end;
+}

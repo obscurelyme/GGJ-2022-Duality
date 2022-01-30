@@ -47,6 +47,7 @@ public class WinPanelUI : MonoBehaviour
       if (currentHeight >= 50 && isTextHiding)
       {
         ShowText();
+        ShowPadding();
       }
       currentHeight += 10;
       banner.style.height = currentHeight;
@@ -62,5 +63,13 @@ public class WinPanelUI : MonoBehaviour
       t.RemoveFromClassList("text__hidden");
     });
     isTextHiding = false;
+  }
+
+  void ShowPadding()
+  {
+    banner.style.paddingBottom = 8;
+    banner.style.paddingTop = 8;
+    banner.style.paddingLeft = 8;
+    banner.style.paddingRight = 8;
   }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+  <ui:VisualElement name="notification-area">
+    <ui:Box name="notification-banner" class="notification panel">
+      <ui:TextElement class="text__hidden" text="DANGER" />
+      <ui:TextElement class="text__hidden" text="BLANK is in danger of being left behind!" />
+    </ui:Box>
+  </ui:VisualElement>
+</ui:UXML>
