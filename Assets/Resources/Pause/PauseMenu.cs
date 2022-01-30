@@ -40,7 +40,8 @@ public class PauseMenu : MonoBehaviour
   void HandleResumeButtonClick(ClickEvent evt)
   {
     resumeButton.Blur();
-    pauseMenuManager.HidePauseMenu();
+    //pauseMenuManager.HidePauseMenu();
+    GameStateManager.InvokeOnTogglePause();
     clickSource.Play();
   }
 

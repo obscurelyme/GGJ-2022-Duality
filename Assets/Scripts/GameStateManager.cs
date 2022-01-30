@@ -36,6 +36,10 @@ public class GameStateManager : MonoBehaviour
 
   public delegate void PauseAction();
   public static event PauseAction OnTogglePause;
+  public static void InvokeOnTogglePause()
+  {
+    OnTogglePause();
+  }
 
   void Start()
   {
