@@ -3205,7 +3205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &633413498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3990,15 +3990,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135808806554257920, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.2737365
+      value: 4.981451
       objectReference: {fileID: 0}
     - target: {fileID: 8135808806554257920, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2705994
+      value: -1.2441297
       objectReference: {fileID: 0}
     - target: {fileID: 8135808806554257920, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.155431
+      value: -8.7002735
       objectReference: {fileID: 0}
     - target: {fileID: 8135808808042225806, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_Targets.Array.data[0].target
@@ -4018,19 +4018,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135808808126639876, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: orthographic size
-      value: 7.548375
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135808808126639876, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135808808126639876, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135808808126639876, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135808808126639877, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.2737365
+      value: 4.981451
       objectReference: {fileID: 0}
     - target: {fileID: 8135808808126639877, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2705994
+      value: -1.2441297
       objectReference: {fileID: 0}
     - target: {fileID: 8135808808126639877, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.155431
+      value: -8.7002735
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cbe652c061df7f4ba1f65777363e3eb, type: 3}
