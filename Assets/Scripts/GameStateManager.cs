@@ -48,10 +48,10 @@ public class GameStateManager : MonoBehaviour
     // {
     //   OnWin();
     // }
-    // if (Input.GetKeyDown(KeyCode.P))
-    // {
-    //   OnTogglePause();
-    // }
+    if (Input.GetKeyDown(KeyCode.P))
+    {
+      OnTogglePause();
+    }
   }
 
   void StopTime()
