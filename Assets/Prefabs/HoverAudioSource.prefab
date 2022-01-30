@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7437276339007679746}
   - component: {fileID: -7668486183076379100}
   m_Layer: 0
-  m_Name: ClickAudioSource
+  m_Name: HoverAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7674de3b3b8523d4aa44ee08e288d331, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 23ed7d9d8c1b95940a3d45349f4573ea, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

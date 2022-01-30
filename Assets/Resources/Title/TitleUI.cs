@@ -10,7 +10,8 @@ public class TitleUI : MonoBehaviour
   [SerializeField] string playSceneName = "MainPlayScene";
 
   Button playButton;
-
+  [SerializeField] AudioSource clickSource;
+  [SerializeField] AudioSource hoverSource;
   void Awake()
   {
     document = GetComponent<UIDocument>();
@@ -26,11 +27,13 @@ public class TitleUI : MonoBehaviour
     }
 
     playButton.RegisterCallback<ClickEvent>(HandlePlayButtonClick);
+    playButton.RegisterCallback<MouseEnterEvent>(HandlePlayButtonHover);
   }
 
   void OnDisable()
   {
     playButton.UnregisterCallback<ClickEvent>(HandlePlayButtonClick);
+    playButton.UnregisterCallback<MouseEnterEvent>(HandlePlayButtonHover);
   }
 
   void HandlePlayButtonClick(ClickEvent evt)
@@ -38,6 +41,12 @@ public class TitleUI : MonoBehaviour
     if (playSceneName != "")
     {
       SceneManager.LoadScene(playSceneName);
+      clickSource.Play();
     }
+  }
+
+  void HandlePlayButtonHover(MouseEnterEvent evt)
+  {
+    hoverSource.Play();
   }
 }
