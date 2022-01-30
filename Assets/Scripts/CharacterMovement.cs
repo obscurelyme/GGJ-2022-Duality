@@ -13,17 +13,23 @@ public class CharacterMovement : MonoBehaviour
   [Tooltip("Whether or not the character moves in the opposite horizontal direction inputted by the player")]
   [SerializeField] private bool isMirrored;
 
-
   [Header("Verticle Movement")]
   [SerializeField] private float jumpForce;
   [Tooltip("The layermask that specifies what type of ground we're able to jump off of")]
   [SerializeField] private LayerMask jumpableGround;
 
   private bool hasControl;
+  private bool wasInAirLastFrame;
 
   private Rigidbody2D rb;
   private SpriteRenderer sprite;
   private BoxCollider2D boxCollider;
+
+  public delegate void JumpAction(GameObject source);
+  public static event JumpAction OnJump;
+
+  public delegate void LandAction(GameObject source);
+  public static event LandAction OnLandFromJump;
 
   // Start is called before the first frame update
   void Start()
@@ -65,15 +71,17 @@ public class CharacterMovement : MonoBehaviour
       CheckHorizontalMovement();
       CheckForJump();
     }
+
+    CheckForLandingFromJump();
   }
 
-  void CheckHorizontalMovement()
+  private void CheckHorizontalMovement()
   {
     // Flip the sprite in the direction we're facing. This should happen after all the velocity calcualtions
     if (Input.GetButton("Horizontal"))
     {
       // Moving horizontally
-      float horizontalVelocity = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
+      float horizontalVelocity = Input.GetAxis("Horizontal") * movementSpeed;
       horizontalVelocity = isMirrored ? -horizontalVelocity : horizontalVelocity;
       if (Mathf.Abs(horizontalVelocity) > maxSpeed)
       {
@@ -91,18 +99,34 @@ public class CharacterMovement : MonoBehaviour
     }
   }
 
-  void CheckForJump()
+  private void CheckForJump()
   {
-    if (Input.GetButtonDown("Jump") && isGrounded())
+    if (Input.GetButtonDown("Jump") && IsGrounded())
     {
       rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+      OnJump(this.gameObject);
+    }
+  }
+
+  private void CheckForLandingFromJump()
+  {
+    if (!IsGrounded())
+    {
+      wasInAirLastFrame = true;
+      return;
+    }
+
+    if (wasInAirLastFrame && IsGrounded())
+    {
+      OnLandFromJump(this.gameObject);
+      wasInAirLastFrame = false;
     }
   }
 
   /*
       Source: https://www.youtube.com/watch?v=ptvK4Fp5vRY
   */
-  private bool isGrounded()
+  private bool IsGrounded()
   {
     RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     return hit.collider != null;
