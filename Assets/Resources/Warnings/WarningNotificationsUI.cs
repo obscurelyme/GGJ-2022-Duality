@@ -40,25 +40,25 @@ public class WarningNotificationsUI : MonoBehaviour
     HideNotification();
   }
 
-  void Update()
-  {
-    if (Input.GetKeyDown(KeyCode.RightArrow))
-    {
-      if (!isShowingNotification)
-      {
-        DisplayRight();
-        StartCoroutine("ShowWarningNotification");
-      }
-    }
-    if (Input.GetKeyDown(KeyCode.LeftArrow))
-    {
-      if (!isShowingNotification)
-      {
-        DisplayLeft();
-        StartCoroutine("ShowWarningNotification");
-      }
-    }
-  }
+  // void Update()
+  // {
+  //   if (Input.GetKeyDown(KeyCode.RightArrow))
+  //   {
+  //     if (!isShowingNotification)
+  //     {
+  //       DisplayRight();
+  //       StartCoroutine("ShowWarningNotification");
+  //     }
+  //   }
+  //   if (Input.GetKeyDown(KeyCode.LeftArrow))
+  //   {
+  //     if (!isShowingNotification)
+  //     {
+  //       DisplayLeft();
+  //       StartCoroutine("ShowWarningNotification");
+  //     }
+  //   }
+  // }
 
   IEnumerator ShowWarningNotification()
   {
