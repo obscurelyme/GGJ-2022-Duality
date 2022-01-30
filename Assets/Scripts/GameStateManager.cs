@@ -29,6 +29,10 @@ public class GameStateManager : MonoBehaviour
 
   public delegate void WinAction();
   public static event WinAction OnWin;
+  public static void InvokeOnWin()
+  {
+    OnWin();
+  }
 
   public delegate void PauseAction();
   public static event PauseAction OnTogglePause;
