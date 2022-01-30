@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+  <ui:VisualElement>
+    <ui:Box name="scrolling-banner" class="panel small">
+      <ui:TextElement class="text__hidden" text="Great work!" />
+      <ui:TextElement class="text__hidden" text="You have been reunited with your cat." />
+    </ui:Box>
+  </ui:VisualElement>
+</ui:UXML>

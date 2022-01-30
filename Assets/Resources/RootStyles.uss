@@ -2,7 +2,7 @@
   /* -unity-font-definition: resource("Fonts/Ole-Regular"); */
   -unity-font-definition: resource("Fonts/ZenKurenaido-Regular");
   color: #fff;
-  font-size: 32px;
+  font-size: 24px;
   background-color: transparent;
 }
 
@@ -30,7 +30,7 @@ Button:focus {
 }
 
 Button TextElement {
-  font-size: 28px;
+  /* font-size: 24px; */
 }
 
 .centered-container {
