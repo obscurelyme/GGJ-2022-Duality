@@ -6,11 +6,18 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
 
-  public delegate void WarningAction(Collider2D other);
-  public static event WarningAction OnWarningBarrierStay;
-  public static void InvokeOnWarningBarrierStay(Collider2D other)
+  public delegate void WarningAreaEnterAction(CharacterType character);
+  public static event WarningAreaEnterAction OnWarningBarrierEnter;
+  public static void InvokeOnWarningBarrierEnter(CharacterType character)
   {
-    OnWarningBarrierStay(other);
+    OnWarningBarrierEnter(character);
+  }
+
+  public delegate void WarningAreaExitAction(CharacterType character);
+  public static event WarningAreaExitAction OnWarningBarrierExit;
+  public static void InvokeOnWarningBarrierExit(CharacterType character)
+  {
+    OnWarningBarrierExit(character);
   }
 
   public delegate void DeathAction();
@@ -29,12 +36,18 @@ public class GameStateManager : MonoBehaviour
   void Start()
   {
     GameStateManager.OnTogglePause += StopTime;
-    GameStateManager.OnWarningBarrierStay += DebugOnWarningBarrierStay;
+    GameStateManager.OnWarningBarrierEnter += DebugOnWarningBarrierEnter;
+    GameStateManager.OnWarningBarrierExit += DebugOnWarningBarrierExit;
   }
 
-  void DebugOnWarningBarrierStay(Collider2D other)
+  void DebugOnWarningBarrierEnter(CharacterType character)
   {
-    Debug.Log(other + " is in danger!");
+    Debug.Log(character + " is in danger!");
+  }
+
+  void DebugOnWarningBarrierExit(CharacterType character)
+  {
+    Debug.Log(character + " is doing better!");
   }
 
   void Update()
