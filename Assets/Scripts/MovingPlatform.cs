@@ -19,6 +19,7 @@ public class MovingPlatform : Platform
         float dt = Time.deltaTime;
 
         if (isMoving) { MovementLoop(dt); }
+
     }
 
     void MovementLoop(float dt)
@@ -28,4 +29,19 @@ public class MovingPlatform : Platform
         Platform.position = Vector3.Lerp(leftMost.position, rightMost.position, Mathf.Abs(currentLoopTime - halfLoopTime) / halfLoopTime);
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if ("Player".Equals(collision.gameObject.tag))
+        {
+            collision.collider.transform.SetParent(Platform);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if ("Player".Equals(collision.gameObject.tag))
+        {
+            collision.collider.transform.SetParent(null);
+        }
+    }
 }

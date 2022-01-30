@@ -13,12 +13,12 @@ public class StartLevelUI : MonoBehaviour
 
   Box scrollInBox;
   int boxWidth = 0;
-  int maxBoxWidth = 650;
+  int maxBoxWidth = 500;
   int startTop = 175;
   int endTop = 0;
   int currentTop = 175;
   int currentLeft = 0;
-  int minLeft = -650;
+  int minLeft = -500;
 
   void OnEnable()
   {
@@ -46,12 +46,11 @@ public class StartLevelUI : MonoBehaviour
 
   IEnumerator ScrollIn()
   {
-    yield return new WaitForSeconds(0.5f);
     bool done = false;
     while (!done)
     {
       yield return new WaitForSeconds(0.016f);
-      scrollInBox.style.width = (boxWidth += 15);
+      scrollInBox.style.width = (boxWidth += 25);
       if (boxWidth >= maxBoxWidth)
       {
         done = true;
