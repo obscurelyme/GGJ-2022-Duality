@@ -7,6 +7,6 @@ public class DontDestroy : MonoBehaviour
 
   void Start()
   {
-    DontDestroyOnLoad(this.gameObject);
+    //DontDestroyOnLoad(this.gameObject);
   }
 }
