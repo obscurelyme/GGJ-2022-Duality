@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4525081882555214986}
   - component: {fileID: 1501348566}
   - component: {fileID: 7675874539911749407}
+  - component: {fileID: 1501348565}
+  - component: {fileID: -7990227641549473221}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Player
@@ -154,6 +156,8 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
+  characterType: 0
+  anim: {fileID: 0}
 --- !u!82 &1501348566
 AudioSource:
   m_ObjectHideFlags: 0
@@ -267,3 +271,24 @@ MonoBehaviour:
   landingSFX: {fileID: 8300000, guid: b64f80c727cf26d41b94a342424fb924, type: 3}
   landingVolume: 0.29
   sourcePitch: 1.1
+  landingVolume: 0.1
+  sourcePitch: 1.2
+--- !u!95 &-7990227641549473221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086039994477124925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ec1448ef4485834ba837a2899d8373c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
