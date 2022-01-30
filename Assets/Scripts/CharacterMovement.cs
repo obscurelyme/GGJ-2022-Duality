@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterMovement : MonoBehaviour
 {
   [Header("Horizontal Movement")]
@@ -17,6 +18,7 @@ public class CharacterMovement : MonoBehaviour
   [SerializeField] private float jumpForce;
   [Tooltip("The layermask that specifies what type of ground we're able to jump off of")]
   [SerializeField] private LayerMask jumpableGround;
+  [SerializeField] private CharacterType characterType;
 
   private bool hasControl;
   private bool wasInAirLastFrame;
@@ -30,6 +32,13 @@ public class CharacterMovement : MonoBehaviour
 
   public delegate void LandAction(GameObject source);
   public static event LandAction OnLandFromJump;
+
+  [SerializeField] Animator anim;
+
+  void Awake()
+  {
+    anim = GetComponent<Animator>();
+  }
 
   // Start is called before the first frame update
   void Start()
@@ -77,6 +86,7 @@ public class CharacterMovement : MonoBehaviour
     {
       CheckHorizontalMovement();
       CheckForJump();
+      CheckForFalling();
     }
 
     CheckForLandingFromJump();
@@ -97,7 +107,14 @@ public class CharacterMovement : MonoBehaviour
       rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
 
       // Flip the sprite in the direction we're facing. This should happen after all the velocity calcualtions
-      sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
+      if (characterType == CharacterType.Witch)
+      {
+        sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f);
+      }
+      else
+      {
+        sprite.flipX = (Mathf.Sign(rb.velocity.x) == 1.0f) ^ isMirrored;
+      }
     }
     else
     {
@@ -112,6 +129,19 @@ public class CharacterMovement : MonoBehaviour
     {
       rb.velocity = new Vector2(rb.velocity.x, jumpForce);
       OnJump(this.gameObject);
+      anim.SetBool("IsJumping", true);
+    }
+  }
+
+  private void CheckForFalling()
+  {
+    if (rb.velocity.y <= -1.0f)
+    {
+      anim.SetBool("IsFalling", true);
+    }
+    else
+    {
+      anim.SetBool("IsFalling", false);
     }
   }
 
@@ -126,6 +156,7 @@ public class CharacterMovement : MonoBehaviour
     if (wasInAirLastFrame && IsGrounded())
     {
       OnLandFromJump(this.gameObject);
+      anim.SetBool("IsJumping", false);
       wasInAirLastFrame = false;
     }
   }

@@ -285,7 +285,7 @@ MonoBehaviour:
   winSFX: {fileID: 8300000, guid: 07b9ac75b30080f4ca194448fae74862, type: 3}
   winVolume: 0.535
   loseSFX: {fileID: 8300000, guid: 4a0132d66a818914dab02113f262a00f, type: 3}
-  loseVolume: 0.652
+  loseVolume: 0.687
 --- !u!1 &4913705496896477600
 GameObject:
   m_ObjectHideFlags: 0
