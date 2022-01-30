@@ -208,7 +208,6 @@ MonoBehaviour:
   maxDisplacementX: 3
   loopTime: 6
   currentLoopTime: 0
-  offsetLoopTime: 0
   Platform: {fileID: 588824167745183684}
   leftMost: {fileID: 588824165901876047}
   rightMost: {fileID: 588824166376506567}
@@ -283,7 +282,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 82fe088928a845047b98bb240d531b33, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f79ca23b3418f144a2e765f0273a878, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -305,7 +304,7 @@ GameObject:
   - component: {fileID: 5037965819815461889}
   - component: {fileID: -311389923704285361}
   m_Layer: 0
-  m_Name: MovingPlatform
+  m_Name: MovingPlatform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +344,6 @@ MonoBehaviour:
   maxDisplacementX: 3
   loopTime: 6
   currentLoopTime: 0
-  offsetLoopTime: 0.33
   Platform: {fileID: 588824167745183684}
   leftMost: {fileID: 588824165901876047}
   rightMost: {fileID: 588824166376506567}
