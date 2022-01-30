@@ -7,7 +7,7 @@ public class TitleUI : MonoBehaviour
   UIDocument document;
   VisualElement root;
   [SerializeField] StyleSheet styles;
-  [SerializeField] string playSceneName = "";
+  [SerializeField] string playSceneName = "MainPlayScene";
 
   Button playButton;
 
