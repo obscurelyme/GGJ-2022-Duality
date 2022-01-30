@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1683272301}
-  controlsMenu: {fileID: 0}
 --- !u!4 &485048
 Transform:
   m_ObjectHideFlags: 0
@@ -200,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   styles: {fileID: 7433441132597879392, guid: 1ba109b1776b62046abec68aa1f25a63, type: 3}
+  pauseMenuManager: {fileID: 485047}
 --- !u!114 &1683272303
 MonoBehaviour:
   m_ObjectHideFlags: 0

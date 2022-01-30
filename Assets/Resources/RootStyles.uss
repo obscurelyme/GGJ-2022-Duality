@@ -1,5 +1,6 @@
 :root {
-  -unity-font-definition: resource("Fonts/Ole-Regular");
+  /* -unity-font-definition: resource("Fonts/Ole-Regular"); */
+  -unity-font-definition: resource("Fonts/ZenKurenaido-Regular");
   color: #fff;
   font-size: 32px;
   background-color: transparent;
@@ -71,12 +72,14 @@ Button TextElement {
 }
 
 .text-title {
+  -unity-font-definition: resource("Fonts/Ole-Regular");
   font-size: 64px;
   margin-top: 24px;
   margin-bottom: 24px;
 }
 
 .text-title-secondary {
+  -unity-font-definition: resource("Fonts/Ole-Regular");
   font-size: 42px;
   margin-top: 12px;
   margin-bottom: 12px;

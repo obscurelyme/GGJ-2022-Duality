@@ -13,12 +13,12 @@ public class StartLevelUI : MonoBehaviour
 
   Box scrollInBox;
   int boxWidth = 0;
-  int maxBoxWidth = 450;
+  int maxBoxWidth = 650;
   int startTop = 175;
   int endTop = 0;
   int currentTop = 175;
   int currentLeft = 0;
-  int minLeft = -450;
+  int minLeft = -650;
 
   void OnEnable()
   {
