@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1826968674}
   - component: {fileID: 1826968676}
-  - component: {fileID: 1826968675}
+  - component: {fileID: 7733467229159269159}
   m_Layer: 0
   m_Name: Warning
   m_TagString: Untagged
@@ -128,7 +128,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1826968675
+--- !u!114 &7733467229159269159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,11 +137,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1826968673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb740a220ed97240b2cb9920c0a613d, type: 3}
+  m_Script: {fileID: 11500000, guid: f9c6b4e515470384a903499e156ed678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   warningSFX: {fileID: 8300000, guid: fc74f6435a525dc409d55fddd3660972, type: 3}
-  warningVolume: 0.324
+  warningVolume: 0.304
 --- !u!1 &1834371664029172864
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8280017292339175965}
   - component: {fileID: 2145964857963125975}
-  - component: {fileID: 1530539120391515784}
+  - component: {fileID: 4500545870854744510}
   m_Layer: 0
   m_Name: Win/Lose
   m_TagString: Untagged
@@ -270,7 +270,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1530539120391515784
+--- !u!114 &4500545870854744510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,13 +279,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834371664029172864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f53143a64799c42b5cd333b4d32921, type: 3}
+  m_Script: {fileID: 11500000, guid: a2114d4da03d77842a79e1f28c5f9198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   winSFX: {fileID: 8300000, guid: 07b9ac75b30080f4ca194448fae74862, type: 3}
-  winVolume: 0.325
+  winVolume: 0.535
   loseSFX: {fileID: 8300000, guid: 4a0132d66a818914dab02113f262a00f, type: 3}
-  loseVolume: 0.332
+  loseVolume: 0.652
 --- !u!1 &4913705496896477600
 GameObject:
   m_ObjectHideFlags: 0

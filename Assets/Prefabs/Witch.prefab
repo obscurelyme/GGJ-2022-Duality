@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 957682081273669509}
   - component: {fileID: 2096708462}
   - component: {fileID: 1622316745}
-  - component: {fileID: 1622316741}
+  - component: {fileID: 5863045546813847108}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Player
@@ -250,7 +250,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1622316741
+--- !u!114 &5863045546813847108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,11 +259,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 957682081273669510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb189a4fd2882845b448eddefee6332, type: 3}
+  m_Script: {fileID: 11500000, guid: f8e920923f7fc084c8fe8c5cda427110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSFX: {fileID: 8300000, guid: aac4afa12200ae641a5b74053742996d, type: 3}
   jumpVolume: 0.3
   landingSFX: {fileID: 8300000, guid: b64f80c727cf26d41b94a342424fb924, type: 3}
-  landingVolume: 0.1
+  landingVolume: 0.175
   sourcePitch: 0.8

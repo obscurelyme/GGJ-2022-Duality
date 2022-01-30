@@ -45,6 +45,13 @@ public class CharacterMovement : MonoBehaviour
     boxCollider = this.GetComponent<BoxCollider2D>();
   }
 
+  void OnDestroy()
+  {
+    GameStateManager.OnDeath -= OnDeath;
+    GameStateManager.OnWin -= OnWin;
+    GameStateManager.OnTogglePause -= OnTogglePause;
+  }
+
   void OnDeath()
   {
     hasControl = false;

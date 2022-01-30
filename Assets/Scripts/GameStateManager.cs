@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameStateManager : MonoBehaviour
 {
+
+  [SerializeField] private float secondsToRestart;
 
   public delegate void WarningAreaEnterAction(CharacterType character);
   public static event WarningAreaEnterAction OnWarningBarrierEnter;
@@ -44,6 +47,13 @@ public class GameStateManager : MonoBehaviour
   void Start()
   {
     GameStateManager.OnTogglePause += StopTime;
+    GameStateManager.OnDeath += RestartLevel;
+  }
+
+  void OnDestroy()
+  {
+    GameStateManager.OnTogglePause -= StopTime;
+    GameStateManager.OnDeath -= RestartLevel;
   }
 
   void Update()
@@ -57,6 +67,18 @@ public class GameStateManager : MonoBehaviour
   void StopTime()
   {
     Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+  }
+
+  void RestartLevel()
+  {
+    StartCoroutine(RestartLevelOnDelay());
+  }
+
+  IEnumerator RestartLevelOnDelay()
+  {
+    // Play animation?
+    yield return new WaitForSeconds(secondsToRestart);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 
 }

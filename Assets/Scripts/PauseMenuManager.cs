@@ -15,6 +15,11 @@ public class PauseMenuManager : MonoBehaviour
     GameStateManager.OnTogglePause += TogglePauseMenu;
   }
 
+  void OnDestroy()
+  {
+    GameStateManager.OnTogglePause -= TogglePauseMenu;
+  }
+
   void TogglePauseMenu()
   {
     paused = !paused;
