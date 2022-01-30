@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
   Button resumeButton;
   Button controlsButton;
 
+  [SerializeField] AudioSource audioSource;
+
   [SerializeField] PauseMenuManager pauseMenuManager;
 
   void OnEnable()
@@ -36,5 +38,6 @@ public class PauseMenu : MonoBehaviour
   {
     resumeButton.Blur();
     pauseMenuManager.HidePauseMenu();
+    audioSource.Play();
   }
 }
