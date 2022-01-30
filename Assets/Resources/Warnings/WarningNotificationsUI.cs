@@ -23,9 +23,12 @@ public class WarningNotificationsUI : MonoBehaviour
   int currentHeight = 0;
   [SerializeField] bool isTextHiding = true;
   bool isShowingNotification = false;
+  [SerializeField] GameStateManager manager;
 
   void OnEnable()
   {
+    GameStateManager.OnWarningBarrierEnter += HandleWarning;
+    GameStateManager.OnWarningBarrierExit += HandleWarningStop;
     document = GetComponent<UIDocument>();
     root = document.rootVisualElement;
     if (styles)
@@ -40,25 +43,42 @@ public class WarningNotificationsUI : MonoBehaviour
     HideNotification();
   }
 
-  // void Update()
-  // {
-  //   if (Input.GetKeyDown(KeyCode.RightArrow))
-  //   {
-  //     if (!isShowingNotification)
-  //     {
-  //       DisplayRight();
-  //       StartCoroutine("ShowWarningNotification");
-  //     }
-  //   }
-  //   if (Input.GetKeyDown(KeyCode.LeftArrow))
-  //   {
-  //     if (!isShowingNotification)
-  //     {
-  //       DisplayLeft();
-  //       StartCoroutine("ShowWarningNotification");
-  //     }
-  //   }
-  // }
+  void OnDisable()
+  {
+    GameStateManager.OnWarningBarrierEnter -= HandleWarning;
+    GameStateManager.OnWarningBarrierExit -= HandleWarningStop;
+  }
+
+  void HandleWarning(CharacterType character)
+  {
+    if (!isShowingNotification)
+    {
+      if (character == CharacterType.Witch)
+      {
+        DisplayLeft();
+        StartCoroutine("ShowWarningNotification");
+        return;
+      }
+      if (character == CharacterType.Cat)
+      {
+        DisplayRight();
+        StartCoroutine("ShowWarningNotification");
+        return;
+      }
+    }
+  }
+
+  void HandleWarningStop(CharacterType character)
+  {
+    if (character == CharacterType.Witch)
+    {
+      return;
+    }
+    if (character == CharacterType.Cat)
+    {
+      return;
+    }
+  }
 
   IEnumerator ShowWarningNotification()
   {

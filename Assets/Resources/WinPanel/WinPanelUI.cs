@@ -15,9 +15,11 @@ public class WinPanelUI : MonoBehaviour
   [SerializeField] int maxHeight = 75;
   int currentHeight = 0;
   [SerializeField] bool isTextHiding = true;
+  [SerializeField] GameStateManager manager;
 
   void OnEnable()
   {
+    GameStateManager.OnWin += HandleWinEvent;
     document = GetComponent<UIDocument>();
     root = document.rootVisualElement;
     if (styles)
@@ -32,6 +34,16 @@ public class WinPanelUI : MonoBehaviour
     banner.style.paddingTop = 0;
     banner.style.paddingLeft = 0;
     banner.style.paddingRight = 0;
+  }
+
+  void OnDisable()
+  {
+    GameStateManager.OnWin -= HandleWinEvent;
+  }
+
+  void HandleWinEvent()
+  {
+    StartCoroutine("PopIntoView");
   }
 
   IEnumerator PopIntoView()
