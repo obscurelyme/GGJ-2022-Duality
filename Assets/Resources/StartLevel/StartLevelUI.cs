@@ -38,7 +38,7 @@ public class StartLevelUI : MonoBehaviour
     textElements = root.Query<TextElement>().ToList();
     textElements.ForEach(t =>
     {
-      t.style.top = 175;
+      t.style.top = startTop;
     });
 
     StartCoroutine("ScrollIn");
@@ -83,6 +83,7 @@ public class StartLevelUI : MonoBehaviour
     while (!done)
     {
       scrollInBox.style.left = (currentLeft -= 15);
+      done = currentLeft <= minLeft;
       yield return new WaitForSeconds(0.016f);
     }
   }
