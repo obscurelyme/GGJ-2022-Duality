@@ -8,6 +8,7 @@ public class GameStateManager : MonoBehaviour
 {
 
   [SerializeField] private float secondsToRestart;
+  [SerializeField] private float secondsToNextLevel;
 
   public delegate void WarningAreaEnterAction(CharacterType character);
   public static event WarningAreaEnterAction OnWarningBarrierEnter;
@@ -48,12 +49,14 @@ public class GameStateManager : MonoBehaviour
   {
     GameStateManager.OnTogglePause += StopTime;
     GameStateManager.OnDeath += RestartLevel;
+    GameStateManager.OnWin += PlayNextLevel;
   }
 
   void OnDestroy()
   {
     GameStateManager.OnTogglePause -= StopTime;
     GameStateManager.OnDeath -= RestartLevel;
+    GameStateManager.OnWin -= PlayNextLevel;
   }
 
   void Update()
@@ -79,6 +82,17 @@ public class GameStateManager : MonoBehaviour
     // Play animation?
     yield return new WaitForSeconds(secondsToRestart);
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
+
+  void PlayNextLevel()
+  {
+    StartCoroutine(PlayNextLevelOnDelay());
+  }
+
+  IEnumerator PlayNextLevelOnDelay()
+  {
+    yield return new WaitForSeconds(secondsToNextLevel);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
 
 }
