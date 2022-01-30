@@ -9,18 +9,12 @@ public class MovingPlatform : Platform
 
 
     [SerializeField] private float currentLoopTime = 0.0f;
-  [SerializeField] [Range(0.0f, 1.0f)] private float offsetLoopRatio = 0.0f;
-
     public Transform Platform;
     public Transform leftMost;
     public Transform rightMost;
 
-  private void Start()
-  {
-    currentLoopTime = offsetLoopRatio * loopTime;
-  }
-  // Update is called once per frame
-  void Update()
+    // Update is called once per frame
+    void Update()
     {
         float dt = Time.deltaTime;
 
