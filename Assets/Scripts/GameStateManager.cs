@@ -92,7 +92,15 @@ public class GameStateManager : MonoBehaviour
   IEnumerator PlayNextLevelOnDelay()
   {
     yield return new WaitForSeconds(secondsToNextLevel);
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    int nextSceneIdx = SceneManager.GetActiveScene().buildIndex + 1;
+    if (SceneManager.sceneCount < nextSceneIdx)
+    {
+      nextSceneIdx = 0;
+    }
+
+    SceneManager.LoadScene(nextSceneIdx);
+
   }
 
 }
