@@ -40,32 +40,11 @@ public class GameStateManager : MonoBehaviour
   void Start()
   {
     GameStateManager.OnTogglePause += StopTime;
-    GameStateManager.OnWarningBarrierEnter += DebugOnWarningBarrierEnter;
-    GameStateManager.OnWarningBarrierExit += DebugOnWarningBarrierExit;
-  }
-
-  void DebugOnWarningBarrierEnter(CharacterType character)
-  {
-    Debug.Log(character + " is in danger!");
-  }
-
-  void DebugOnWarningBarrierExit(CharacterType character)
-  {
-    Debug.Log(character + " is doing better!");
   }
 
   void Update()
   {
-    //Demo Code
-    if (Input.GetKeyDown(KeyCode.F))
-    {
-      OnDeath();
-    }
-    if (Input.GetKeyDown(KeyCode.W))
-    {
-      OnWin();
-    }
-    if (Input.GetKeyDown(KeyCode.P))
+    if (Input.GetKeyDown(KeyCode.Escape))
     {
       OnTogglePause();
     }

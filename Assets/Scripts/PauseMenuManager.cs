@@ -11,14 +11,8 @@ public class PauseMenuManager : MonoBehaviour
     {
       Debug.LogError("Pause Menu was not assigned in PauseMenuManager");
     }
-  }
 
-  void Update()
-  {
-    if (Input.GetKeyDown(KeyCode.Escape))
-    {
-      TogglePauseMenu();
-    }
+    GameStateManager.OnTogglePause += TogglePauseMenu;
   }
 
   void TogglePauseMenu()
