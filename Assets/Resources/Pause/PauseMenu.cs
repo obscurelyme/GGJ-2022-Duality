@@ -10,6 +10,9 @@ public class PauseMenu : MonoBehaviour
   Button resumeButton;
   Button controlsButton;
 
+  [SerializeField] AudioSource clickSource;
+  [SerializeField] AudioSource hoverSource;
+
   [SerializeField] PauseMenuManager pauseMenuManager;
 
   void OnEnable()
@@ -25,16 +28,24 @@ public class PauseMenu : MonoBehaviour
     }
 
     resumeButton.RegisterCallback<ClickEvent>(HandleResumeButtonClick);
+    resumeButton.RegisterCallback<MouseEnterEvent>(HandleResumeButtonHover);
   }
 
   void OnDisable()
   {
     resumeButton.UnregisterCallback<ClickEvent>(HandleResumeButtonClick);
+    resumeButton.UnregisterCallback<MouseEnterEvent>(HandleResumeButtonHover);
   }
 
   void HandleResumeButtonClick(ClickEvent evt)
   {
     resumeButton.Blur();
     pauseMenuManager.HidePauseMenu();
+    clickSource.Play();
+  }
+
+  void HandleResumeButtonHover(MouseEnterEvent evt)
+  {
+    hoverSource.Play();
   }
 }

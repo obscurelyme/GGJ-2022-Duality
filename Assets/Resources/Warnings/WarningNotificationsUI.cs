@@ -114,12 +114,14 @@ public class WarningNotificationsUI : MonoBehaviour
 
   void DisplayLeft()
   {
+    text[1].text = WarningNotification.WitchInDanger;
     area.RemoveFromClassList("right-side");
     area.AddToClassList("left-side");
   }
 
   void DisplayRight()
   {
+    text[1].text = WarningNotification.CatInDanger;
     area.RemoveFromClassList("left-side");
     area.AddToClassList("right-side");
   }
