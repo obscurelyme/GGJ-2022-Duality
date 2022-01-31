@@ -421,6 +421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   styles: {fileID: 7433441132597879392, guid: 8131b72bf3e1302479ac08fdfee7a942, type: 3}
-  playSceneName: MainPlayScene
+  playSceneName: MainPlay_Easy_Dom
   clickSource: {fileID: 1356460089}
   hoverSource: {fileID: 1653115881}
