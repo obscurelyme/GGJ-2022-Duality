@@ -12,10 +12,25 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainPlayScene.unity
     guid: a6764a21059a586458d3ed56cd7b76dc
   - enabled: 1
+    path: Assets/_Scenes/LevelA0.unity
+    guid: 393e6ff8422740d428878a4b68e2de9a
+  - enabled: 1
+    path: Assets/_Scenes/MainPlay_Easy_Dom.unity
+    guid: 108f59ff48a7c3f4fad374501f9c78b6
+  - enabled: 1
+    path: Assets/_Scenes/LevelA1.unity
+    guid: a98b623d61355c44f8ee51f9fa37010a
+  - enabled: 1
     path: Assets/_Scenes/MainPlayMedium.unity
     guid: d046359b76c38ee4dbd3880de755a1a3
   - enabled: 1
+    path: Assets/_Scenes/LevelA2.unity
+    guid: e060a2ba7db008246bb7037e171c723a
+  - enabled: 1
     path: Assets/_Scenes/MainPlayHard.unity
     guid: 373a8ddfddd6ab74e87036b21dd78eae
+  - enabled: 1
+    path: Assets/_Scenes/LevelA3.unity
+    guid: 26de2f78b87b3504abb73ddfc6fc9957
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9eaaae4c057c17b46af133f491931c4d, type: 2}
