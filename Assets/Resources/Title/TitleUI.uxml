@@ -7,7 +7,7 @@
   <ui:Box class="centered-container">
     <ui:Box class="container">
       <ui:Box class="panel centered">
-        <ui:TextElement class="text-title" text="Hello World!" />
+        <ui:TextElement class="text-title" text="Kit 'n Witch!" />
 
         <ui:Box class="vertical-container">
           <ui:Button name="button-play" class="button">
